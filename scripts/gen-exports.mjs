@@ -42,6 +42,7 @@ const exports = {
   ...Object.fromEntries(components.map((c) => [c.subpath, subpathEntry(c.distRel)])),
   './tokens': './dist/esm/tokens/index.css',
   './styles.css': './dist/cobalt.css',
+  './dist/cobalt.css': './dist/cobalt.css',
   './package.json': './package.json',
 }
 

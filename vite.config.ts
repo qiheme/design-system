@@ -26,9 +26,11 @@ const input = Object.fromEntries([
 // preserveModules + cssCodeSplit emits CSS assets under `dist/.../assets/` and
 // strips the JS-side `import './*.css'` calls (leaving `/* empty css */`
 // placeholders). This plugin (1) renames CSS assets back to their source-mirrored
-// paths so the dist tree colocates JS + CSS, and (2) reinjects each chunk's
+// paths so the dist tree colocates JS + CSS, and (2) reinjects each ESM chunk's
 // imported-CSS list as side-effect imports so consumer bundlers tree-shake per
-// component automatically.
+// component automatically. CJS chunks are skipped because Node cannot
+// `require()` a CSS file natively — bundler-driven consumers should resolve the
+// `import` (ESM) condition, and plain-Node CJS users link `./styles.css`.
 function colocateCss(): Plugin {
   const relPath = (fromDir: string, toFile: string) => {
     const fromParts = fromDir ? fromDir.split('/') : []
@@ -60,15 +62,15 @@ function colocateCss(): Plugin {
       }
       for (const [filename, chunk] of Object.entries(bundle)) {
         if (chunk.type !== 'chunk') continue
+        if (filename.endsWith('.cjs')) continue
         const importedCss: Set<string> | undefined = chunk.viteMetadata?.importedCss
         if (!importedCss || importedCss.size === 0) continue
-        const isCjs = filename.endsWith('.cjs')
         const chunkDir = filename.includes('/') ? filename.replace(/\/[^/]+$/, '') : ''
         const stmts: string[] = []
         for (const oldCssPath of importedCss) {
           const cssPath = renames.get(oldCssPath) ?? oldCssPath
           const rel = relPath(chunkDir, cssPath)
-          stmts.push(isCjs ? `require('${rel}');` : `import '${rel}';`)
+          stmts.push(`import '${rel}';`)
         }
         chunk.code = `${stmts.join('\n')}\n${chunk.code}`
       }
