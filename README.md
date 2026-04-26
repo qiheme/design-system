@@ -28,7 +28,7 @@ npm install @qiheme/cobalt
 
 ```tsx
 import { CobaltProvider, Button, Badge } from '@qiheme/cobalt'
-import '@qiheme/cobalt/dist/cobalt.css'
+import '@qiheme/cobalt/styles.css'
 
 export default function App() {
   return (
@@ -39,6 +39,28 @@ export default function App() {
   )
 }
 ```
+
+### Per-component imports (optional, for leaner bundles)
+
+If your app only uses a few components and you want to avoid shipping the full stylesheet, import each component from its own subpath. Each subpath pulls only that component's JS and CSS:
+
+```tsx
+import { CobaltProvider } from '@qiheme/cobalt/CobaltProvider'
+import { Button } from '@qiheme/cobalt/Button'
+import { Badge } from '@qiheme/cobalt/Badge'
+// Skip '@qiheme/cobalt/styles.css' — each component imports its own scoped CSS.
+
+export default function App() {
+  return (
+    <CobaltProvider>
+      <Button variant="primary">Launch</Button>
+      <Badge variant="active">Active</Badge>
+    </CobaltProvider>
+  )
+}
+```
+
+`CobaltProvider` injects design tokens automatically. Both import styles can be mixed; with proper ESM tree-shaking they produce equivalent bundles, but the subpath form is a guaranteed-minimal entrypoint for bundlers that don't fully tree-shake CSS side-effects through the root barrel.
 
 ---
 

@@ -3,25 +3,247 @@
   "version": "0.1.0",
   "description": "Cobalt — React component library for the Quincy OS design system by Cloud129 Technologies",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
     },
-    "./tokens": "./dist/tokens/index.css",
-    "./dist/cobalt.css": "./dist/cobalt.css"
+    "./Avatar": {
+      "types": "./dist/esm/atoms/Avatar/Avatar.d.ts",
+      "import": "./dist/esm/atoms/Avatar/Avatar.js",
+      "require": "./dist/cjs/atoms/Avatar/Avatar.cjs"
+    },
+    "./Badge": {
+      "types": "./dist/esm/atoms/Badge/Badge.d.ts",
+      "import": "./dist/esm/atoms/Badge/Badge.js",
+      "require": "./dist/cjs/atoms/Badge/Badge.cjs"
+    },
+    "./Button": {
+      "types": "./dist/esm/atoms/Button/Button.d.ts",
+      "import": "./dist/esm/atoms/Button/Button.js",
+      "require": "./dist/cjs/atoms/Button/Button.cjs"
+    },
+    "./Divider": {
+      "types": "./dist/esm/atoms/Divider/Divider.d.ts",
+      "import": "./dist/esm/atoms/Divider/Divider.js",
+      "require": "./dist/cjs/atoms/Divider/Divider.cjs"
+    },
+    "./Input": {
+      "types": "./dist/esm/atoms/Input/Input.d.ts",
+      "import": "./dist/esm/atoms/Input/Input.js",
+      "require": "./dist/cjs/atoms/Input/Input.cjs"
+    },
+    "./LogoMark": {
+      "types": "./dist/esm/atoms/LogoMark/LogoMark.d.ts",
+      "import": "./dist/esm/atoms/LogoMark/LogoMark.js",
+      "require": "./dist/cjs/atoms/LogoMark/LogoMark.cjs"
+    },
+    "./NavBadge": {
+      "types": "./dist/esm/atoms/NavBadge/NavBadge.d.ts",
+      "import": "./dist/esm/atoms/NavBadge/NavBadge.js",
+      "require": "./dist/cjs/atoms/NavBadge/NavBadge.cjs"
+    },
+    "./ProgressBar": {
+      "types": "./dist/esm/atoms/ProgressBar/ProgressBar.d.ts",
+      "import": "./dist/esm/atoms/ProgressBar/ProgressBar.js",
+      "require": "./dist/cjs/atoms/ProgressBar/ProgressBar.cjs"
+    },
+    "./ProgressMini": {
+      "types": "./dist/esm/atoms/ProgressMini/ProgressMini.d.ts",
+      "import": "./dist/esm/atoms/ProgressMini/ProgressMini.js",
+      "require": "./dist/cjs/atoms/ProgressMini/ProgressMini.cjs"
+    },
+    "./StatusDot": {
+      "types": "./dist/esm/atoms/StatusDot/StatusDot.d.ts",
+      "import": "./dist/esm/atoms/StatusDot/StatusDot.js",
+      "require": "./dist/cjs/atoms/StatusDot/StatusDot.cjs"
+    },
+    "./Tag": {
+      "types": "./dist/esm/atoms/Tag/Tag.d.ts",
+      "import": "./dist/esm/atoms/Tag/Tag.js",
+      "require": "./dist/cjs/atoms/Tag/Tag.cjs"
+    },
+    "./ContactItem": {
+      "types": "./dist/esm/molecules/ContactItem/ContactItem.d.ts",
+      "import": "./dist/esm/molecules/ContactItem/ContactItem.js",
+      "require": "./dist/cjs/molecules/ContactItem/ContactItem.cjs"
+    },
+    "./EducationEntry": {
+      "types": "./dist/esm/molecules/EducationEntry/EducationEntry.d.ts",
+      "import": "./dist/esm/molecules/EducationEntry/EducationEntry.js",
+      "require": "./dist/cjs/molecules/EducationEntry/EducationEntry.cjs"
+    },
+    "./ExperienceRole": {
+      "types": "./dist/esm/molecules/ExperienceRole/ExperienceRole.d.ts",
+      "import": "./dist/esm/molecules/ExperienceRole/ExperienceRole.js",
+      "require": "./dist/cjs/molecules/ExperienceRole/ExperienceRole.cjs"
+    },
+    "./MetricCard": {
+      "types": "./dist/esm/molecules/MetricCard/MetricCard.d.ts",
+      "import": "./dist/esm/molecules/MetricCard/MetricCard.js",
+      "require": "./dist/cjs/molecules/MetricCard/MetricCard.cjs"
+    },
+    "./MissionItem": {
+      "types": "./dist/esm/molecules/MissionItem/MissionItem.d.ts",
+      "import": "./dist/esm/molecules/MissionItem/MissionItem.js",
+      "require": "./dist/cjs/molecules/MissionItem/MissionItem.cjs"
+    },
+    "./NavItem": {
+      "types": "./dist/esm/molecules/NavItem/NavItem.d.ts",
+      "import": "./dist/esm/molecules/NavItem/NavItem.js",
+      "require": "./dist/cjs/molecules/NavItem/NavItem.cjs"
+    },
+    "./QuickStatRow": {
+      "types": "./dist/esm/molecules/QuickStatRow/QuickStatRow.d.ts",
+      "import": "./dist/esm/molecules/QuickStatRow/QuickStatRow.js",
+      "require": "./dist/cjs/molecules/QuickStatRow/QuickStatRow.cjs"
+    },
+    "./SignalItem": {
+      "types": "./dist/esm/molecules/SignalItem/SignalItem.d.ts",
+      "import": "./dist/esm/molecules/SignalItem/SignalItem.js",
+      "require": "./dist/cjs/molecules/SignalItem/SignalItem.cjs"
+    },
+    "./SkillRow": {
+      "types": "./dist/esm/molecules/SkillRow/SkillRow.d.ts",
+      "import": "./dist/esm/molecules/SkillRow/SkillRow.js",
+      "require": "./dist/cjs/molecules/SkillRow/SkillRow.cjs"
+    },
+    "./StatItem": {
+      "types": "./dist/esm/molecules/StatItem/StatItem.d.ts",
+      "import": "./dist/esm/molecules/StatItem/StatItem.js",
+      "require": "./dist/cjs/molecules/StatItem/StatItem.cjs"
+    },
+    "./TimelineItem": {
+      "types": "./dist/esm/molecules/TimelineItem/TimelineItem.d.ts",
+      "import": "./dist/esm/molecules/TimelineItem/TimelineItem.js",
+      "require": "./dist/cjs/molecules/TimelineItem/TimelineItem.cjs"
+    },
+    "./UserBlock": {
+      "types": "./dist/esm/molecules/UserBlock/UserBlock.d.ts",
+      "import": "./dist/esm/molecules/UserBlock/UserBlock.js",
+      "require": "./dist/cjs/molecules/UserBlock/UserBlock.cjs"
+    },
+    "./Card": {
+      "types": "./dist/esm/organisms/Card/Card.d.ts",
+      "import": "./dist/esm/organisms/Card/Card.js",
+      "require": "./dist/cjs/organisms/Card/Card.cjs"
+    },
+    "./ExperienceBlock": {
+      "types": "./dist/esm/organisms/ExperienceBlock/ExperienceBlock.d.ts",
+      "import": "./dist/esm/organisms/ExperienceBlock/ExperienceBlock.js",
+      "require": "./dist/cjs/organisms/ExperienceBlock/ExperienceBlock.cjs"
+    },
+    "./FeatureCard": {
+      "types": "./dist/esm/organisms/FeatureCard/FeatureCard.d.ts",
+      "import": "./dist/esm/organisms/FeatureCard/FeatureCard.js",
+      "require": "./dist/cjs/organisms/FeatureCard/FeatureCard.cjs"
+    },
+    "./Hero": {
+      "types": "./dist/esm/organisms/Hero/Hero.d.ts",
+      "import": "./dist/esm/organisms/Hero/Hero.js",
+      "require": "./dist/cjs/organisms/Hero/Hero.cjs"
+    },
+    "./ProjectCard": {
+      "types": "./dist/esm/organisms/ProjectCard/ProjectCard.d.ts",
+      "import": "./dist/esm/organisms/ProjectCard/ProjectCard.js",
+      "require": "./dist/cjs/organisms/ProjectCard/ProjectCard.cjs"
+    },
+    "./Sidebar": {
+      "types": "./dist/esm/organisms/Sidebar/Sidebar.d.ts",
+      "import": "./dist/esm/organisms/Sidebar/Sidebar.js",
+      "require": "./dist/cjs/organisms/Sidebar/Sidebar.cjs"
+    },
+    "./StatsRow": {
+      "types": "./dist/esm/organisms/StatsRow/StatsRow.d.ts",
+      "import": "./dist/esm/organisms/StatsRow/StatsRow.js",
+      "require": "./dist/cjs/organisms/StatsRow/StatsRow.cjs"
+    },
+    "./StatusBar": {
+      "types": "./dist/esm/organisms/StatusBar/StatusBar.d.ts",
+      "import": "./dist/esm/organisms/StatusBar/StatusBar.js",
+      "require": "./dist/cjs/organisms/StatusBar/StatusBar.cjs"
+    },
+    "./TopNav": {
+      "types": "./dist/esm/organisms/TopNav/TopNav.d.ts",
+      "import": "./dist/esm/organisms/TopNav/TopNav.js",
+      "require": "./dist/cjs/organisms/TopNav/TopNav.cjs"
+    },
+    "./Topbar": {
+      "types": "./dist/esm/organisms/Topbar/Topbar.d.ts",
+      "import": "./dist/esm/organisms/Topbar/Topbar.js",
+      "require": "./dist/cjs/organisms/Topbar/Topbar.cjs"
+    },
+    "./DashboardLayout": {
+      "types": "./dist/esm/templates/DashboardLayout/DashboardLayout.d.ts",
+      "import": "./dist/esm/templates/DashboardLayout/DashboardLayout.js",
+      "require": "./dist/cjs/templates/DashboardLayout/DashboardLayout.cjs"
+    },
+    "./LandingLayout": {
+      "types": "./dist/esm/templates/LandingLayout/LandingLayout.d.ts",
+      "import": "./dist/esm/templates/LandingLayout/LandingLayout.js",
+      "require": "./dist/cjs/templates/LandingLayout/LandingLayout.cjs"
+    },
+    "./PortfolioLayout": {
+      "types": "./dist/esm/templates/PortfolioLayout/PortfolioLayout.d.ts",
+      "import": "./dist/esm/templates/PortfolioLayout/PortfolioLayout.js",
+      "require": "./dist/cjs/templates/PortfolioLayout/PortfolioLayout.cjs"
+    },
+    "./ResumeLayout": {
+      "types": "./dist/esm/templates/ResumeLayout/ResumeLayout.d.ts",
+      "import": "./dist/esm/templates/ResumeLayout/ResumeLayout.js",
+      "require": "./dist/cjs/templates/ResumeLayout/ResumeLayout.cjs"
+    },
+    "./CobaltProvider": {
+      "types": "./dist/esm/provider/CobaltProvider.d.ts",
+      "import": "./dist/esm/provider/CobaltProvider.js",
+      "require": "./dist/cjs/provider/CobaltProvider.cjs"
+    },
+    "./Display": {
+      "types": "./dist/esm/typography/Display.d.ts",
+      "import": "./dist/esm/typography/Display.js",
+      "require": "./dist/cjs/typography/Display.cjs"
+    },
+    "./Heading": {
+      "types": "./dist/esm/typography/Heading.d.ts",
+      "import": "./dist/esm/typography/Heading.js",
+      "require": "./dist/cjs/typography/Heading.cjs"
+    },
+    "./Body": {
+      "types": "./dist/esm/typography/Body.d.ts",
+      "import": "./dist/esm/typography/Body.js",
+      "require": "./dist/cjs/typography/Body.cjs"
+    },
+    "./Label": {
+      "types": "./dist/esm/typography/Label.d.ts",
+      "import": "./dist/esm/typography/Label.js",
+      "require": "./dist/cjs/typography/Label.cjs"
+    },
+    "./Mono": {
+      "types": "./dist/esm/typography/Mono.d.ts",
+      "import": "./dist/esm/typography/Mono.js",
+      "require": "./dist/cjs/typography/Mono.cjs"
+    },
+    "./tokens": "./dist/esm/tokens/index.css",
+    "./styles.css": "./dist/cobalt.css",
+    "./package.json": "./package.json"
   },
-  "files": ["dist"],
-  "sideEffects": ["**/*.css"],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "vite build",
+    "prebuild": "node scripts/gen-exports.mjs --check",
+    "build": "vite build && node scripts/build-css-bundle.mjs",
+    "gen:exports": "node scripts/gen-exports.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -62,6 +284,12 @@
   "bugs": {
     "url": "https://github.com/qiheme/design-system/issues"
   },
-  "keywords": ["design-system", "react", "cobalt", "cloud129", "component-library"],
+  "keywords": [
+    "design-system",
+    "react",
+    "cobalt",
+    "cloud129",
+    "component-library"
+  ],
   "license": "MIT"
 }
