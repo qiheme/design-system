@@ -1,6 +1,6 @@
 {
   "name": "@q-labs/cobalt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cobalt — React component library for the Quincy OS design system by Cloud129 Technologies",
   "type": "module",
   "main": "./dist/cjs/index.cjs",
