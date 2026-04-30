@@ -1,8 +1,8 @@
 # Cobalt Design System — CLAUDE.md
 
-**Package:** `@qiheme/cobalt`
-**Repo:** https://github.com/qiheme/design-system
-**Storybook:** https://qiheme.github.io/design-system
+**Package:** `@q-labs/cobalt`
+**Repo:** https://github.com/q-labs/cobalt
+**Storybook:** https://q-labs.github.io/cobalt
 
 Cobalt is the React component library for the Quincy OS design system by Cloud129 Technologies. It is dark-first, cobalt-and-crimson accented, and built on Space Grotesk / DM Sans / JetBrains Mono.
 
@@ -109,18 +109,49 @@ npm run build-storybook # static output → storybook-static/
 
 ## Publishing
 
-The package is published to **GitHub Packages** as `@qiheme/cobalt`.
+The package is published to **GitHub Packages** as `@q-labs/cobalt` using [Changesets](https://github.com/changesets/changesets).
 
-To consume in another repo:
-1. Add `.npmrc`: `@qiheme:registry=https://npm.pkg.github.com`
-2. `npm install @qiheme/cobalt`
-3. Wrap your app: `<CobaltProvider>...</CobaltProvider>`
-4. Import components: `import { Button, Badge } from '@qiheme/cobalt'`
+### As a contributor — add a changeset to your PR
 
-To publish a new version:
-1. Bump version in `package.json`
-2. `git tag v0.x.0 && git push --tags`
-3. GitHub Actions `release.yml` runs automatically.
+Every PR that changes component behaviour, API, or tokens must include a changeset file. Run this inside the repo:
+
+```bash
+npx changeset
+```
+
+The CLI prompts you to pick `patch` / `minor` / `major` and write a short human-readable summary. It creates a file like `.changeset/fuzzy-cat-drinks.md` — commit it with your PR. A PR with no changeset file will not trigger a version bump or publish when merged.
+
+| Bump type | When to use |
+|---|---|
+| `patch` | Bug fixes, internal refactors with no API change |
+| `minor` | New components or props, backwards-compatible additions |
+| `major` | Removed/renamed exports, breaking prop changes, token renames |
+
+### How the release pipeline works
+
+1. Your PR (with `.changeset/*.md`) merges to `main`.
+2. The `changeset.yml` workflow detects pending changesets and opens (or updates) a **"Version Packages" PR** that bumps `package.json` and appends to `CHANGELOG.md`.
+3. The team merges the "Version Packages" PR.
+4. The workflow runs again — no pending changesets remain, so it runs `npm run release` and publishes to GitHub Packages automatically.
+
+### For consumers
+
+Add to `.npmrc` in your project:
+```
+@q-labs:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=<GITHUB_PAT_WITH_READ_PACKAGES>
+```
+
+Then install:
+```bash
+npm install @q-labs/cobalt
+```
+
+Wrap your app and import components:
+```tsx
+import { CobaltProvider, Button, Badge } from '@q-labs/cobalt'
+import '@q-labs/cobalt/styles.css'
+```
 
 ---
 

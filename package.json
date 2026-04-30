@@ -1,5 +1,5 @@
 {
-  "name": "@qiheme/cobalt",
+  "name": "@q-labs/cobalt",
   "version": "0.1.0",
   "description": "Cobalt — React component library for the Quincy OS design system by Cloud129 Technologies",
   "type": "module",
@@ -248,13 +248,17 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -o storybook-static"
+    "build-storybook": "storybook build -o storybook-static",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && npm publish"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.0",
     "@storybook/addon-docs": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/react": "^8.6.12",
@@ -278,11 +282,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/qiheme/design-system.git"
+    "url": "https://github.com/q-labs/cobalt.git"
   },
-  "homepage": "https://qiheme.github.io/design-system",
+  "homepage": "https://q-labs.github.io/cobalt",
   "bugs": {
-    "url": "https://github.com/qiheme/design-system/issues"
+    "url": "https://github.com/q-labs/cobalt/issues"
   },
   "keywords": [
     "design-system",

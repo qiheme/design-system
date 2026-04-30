@@ -1,7 +1,7 @@
 # GitHub Copilot Instructions — Cobalt Design System
 
 ## What this repo is
-`@qiheme/cobalt` is a React component library following Atomic Design principles (atoms → molecules → organisms → templates). It is the UI layer for the Quincy OS / Cloud129 design system.
+`@q-labs/cobalt` is a React component library following Atomic Design principles (atoms → molecules → organisms → templates). It is the UI layer for the Quincy OS / Cloud129 design system.
 
 ## File structure for every component
 Each component lives in its own folder with exactly these files:

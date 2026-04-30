@@ -2,9 +2,9 @@
 
 > React component library for the Quincy OS design system by Cloud129 Technologies.
 
-[![CI](https://github.com/qiheme/design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/qiheme/design-system/actions/workflows/ci.yml)
-[![Storybook](https://img.shields.io/badge/Storybook-live-FF4785?logo=storybook&logoColor=white)](https://qiheme.github.io/design-system)
-[![npm](https://img.shields.io/badge/npm-%40qiheme%2Fcobalt-blue)](https://github.com/qiheme/design-system/packages)
+[![CI](https://github.com/q-labs/cobalt/actions/workflows/ci.yml/badge.svg)](https://github.com/q-labs/cobalt/actions/workflows/ci.yml)
+[![Storybook](https://img.shields.io/badge/Storybook-live-FF4785?logo=storybook&logoColor=white)](https://q-labs.github.io/cobalt)
+[![npm](https://img.shields.io/badge/npm-%40q--labs%2Fcobalt-blue)](https://github.com/q-labs/cobalt/packages)
 
 Dark-first. Cobalt and crimson. Space Grotesk / DM Sans / JetBrains Mono.
 
@@ -15,20 +15,20 @@ Dark-first. Cobalt and crimson. Space Grotesk / DM Sans / JetBrains Mono.
 Add to `.npmrc` in your project:
 
 ```
-@qiheme:registry=https://npm.pkg.github.com
+@q-labs:registry=https://npm.pkg.github.com
 ```
 
 Then install:
 
 ```bash
-npm install @qiheme/cobalt
+npm install @q-labs/cobalt
 ```
 
 ## Usage
 
 ```tsx
-import { CobaltProvider, Button, Badge } from '@qiheme/cobalt'
-import '@qiheme/cobalt/styles.css'
+import { CobaltProvider, Button, Badge } from '@q-labs/cobalt'
+import '@q-labs/cobalt/styles.css'
 
 export default function App() {
   return (
@@ -45,10 +45,10 @@ export default function App() {
 If your app only uses a few components and you want to avoid shipping the full stylesheet, import each component from its own subpath. Each subpath pulls only that component's JS and CSS:
 
 ```tsx
-import { CobaltProvider } from '@qiheme/cobalt/CobaltProvider'
-import { Button } from '@qiheme/cobalt/Button'
-import { Badge } from '@qiheme/cobalt/Badge'
-// Skip '@qiheme/cobalt/styles.css' — each component imports its own scoped CSS.
+import { CobaltProvider } from '@q-labs/cobalt/CobaltProvider'
+import { Button } from '@q-labs/cobalt/Button'
+import { Badge } from '@q-labs/cobalt/Badge'
+// Skip '@q-labs/cobalt/styles.css' — each component imports its own scoped CSS.
 
 export default function App() {
   return (
@@ -108,14 +108,7 @@ npm run build-storybook  # Static Storybook → storybook-static/
 
 ## Publishing
 
-Tag a release to trigger automatic publish to GitHub Packages:
-
-```bash
-npm version patch   # or minor / major
-git push --tags
-```
-
-The `release.yml` workflow publishes `@qiheme/cobalt` to GitHub Packages automatically.
+Releases are managed by Changesets. See [CLAUDE.md](./CLAUDE.md) for the contributor workflow.
 
 ---
 
@@ -124,7 +117,7 @@ The `release.yml` workflow publishes `@qiheme/cobalt` to GitHub Packages automat
 Import tokens directly for custom integrations:
 
 ```css
-@import '@qiheme/cobalt/tokens';
+@import '@q-labs/cobalt/tokens';
 ```
 
 Token categories: color primitives (`--cobalt-*`, `--crimson-*`), semantic colors (`--bg-base`, `--text-primary`, `--accent-default`), typography scale, spacing, border radius.
